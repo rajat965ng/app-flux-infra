@@ -56,7 +56,8 @@
    - ![](.README/d0b65799.png)    
 
 ### Apply Helm Chart
-#### Create Helm Chart
+#### Create a Helm Chart "ms-template"
+   - ![](.README/537bb8a6.png)
 #### How to convert Github in Helm repository ?
 #### Configure Helm Repository in Flux
 #### Update the Helm Chart
