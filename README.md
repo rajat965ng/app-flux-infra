@@ -37,8 +37,10 @@ Learn To Implement GitOps On Kubernetes Using Flux In Just 15 Minutes
       - ```
         flux bootstrap git app-flux-infra --url=https://github.com/rajat965ng/app-flux-infra.git -u <GIT_USERNAME> -p <GIT_PAT> --token-auth=true --path=./cluster/dev/
         ```
-      ![](.README/7ac12368.png)  
-    - Create a Nginx deployment
+      ![](.README/7ac12368.png)
+    - Take a git pull and view the cluster hierarchy 
+      ![](.README/a54e6b15.png)  
+    - Create a Nginx deployment under cluster/dev
     - Push Nginx deployment in Git repo
     - Observe the deployments rolling
   - Apply Helm Chart
