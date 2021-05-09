@@ -156,7 +156,7 @@
 
 
 ## References
-- GitOps and Kubernetes - Continuous Deployment with Argo CD, Jenkins X, and Flux [https://www.manning.com/books/gitops-and-kubernetes]
+- GitOps and Kubernetes - Continuous Deployment with Argo CD, Jenkins X, and Flux By Billy Yuen, Alexander Matyushentsev, Todd Ekenstam, and Jesse Suen [https://www.manning.com/books/gitops-and-kubernetes]
 - KIND [https://kind.sigs.k8s.io/]
 - Flux [https://fluxcd.io/]
 - Source Code [https://github.com/rajat965ng/app-flux-infra]
