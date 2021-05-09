@@ -1,8 +1,32 @@
 # Learn To Implement GitOps On Kubernetes Using Flux In Just 15 Minutes
 ## Introduction
 ### What is GitOps ?
+- The term GitOps was coined in August 2017 in a series of blogs by Alexis Richardson, cofounder and CEO of Weaveworks.
+- GitOps is a set of procedures that uses the power of Git to provide both revision and change control within the Kubernetes platform.
+- GitOps brings the core benefits of Infrastructure as Code and immutable infrastructure to the deployment, monitoring, and life-cycle management of Kubernetes applications in an intuitive, accessible way.
+- A developer-centric experience for managing applications, with fully automated pipelines/workflows using Git for development and operations.
+- Use of the Git revision control system to track and approve changes to the infrastructure and run-time environment of applications.
+
+![](.README/ddba6fdb.png)
+- The GitOps release workflow starts with creating a branch of the repository containing changes to the definition of the system’s desired state.
+                                                                                           
 ### What is Flux ?
-### Sidecar Pattern
+- Command line utility for assembling Kubernetes CD pipelines the GitOps way.
+- The project was started in 2016 at Weaveworks and joined the CNCF Sandbox three years later.
+- Flux does not introduce any additional layers on top of Kubernetes, such as applications or its own access control system. 
+- A single Flux instance manages one Kubernetes cluster and requires the user to maintain one Git repository that represents the cluster state.
+- Flux typically runs inside of the managed cluster and relies on Kubernetes RBAC. This approach significantly simplifies the Flux configuration and helps flatten the learning curve.
+- In the multitenant environment, each team can install an instance of Flux with limited access and use it to manage a single Namespace. That fully empowers the team to manage resources in the application Namespace and is still 100% secure because Flux access is managed by Kubernetes RBAC.
+
+### Flux Architecture
+- Flux consists of only two components: 
+  - The Flux daemon   
+  - The key-value store Memcached (open source, high-performance, distributed memory object-caching system).
+
+![](.README/2c2390c6.png)
+
+- There must be only one replica of the Flux daemon running at any time. Even if the daemon crashes in the middle of a deployment, it restarts quickly and idempotently resumes the deployment process.
+- The main purpose of Memcached is to support Docker registry scanning. Flux uses it to store a list of available image versions of each Docker image. 
 
 ## System Requirements
 ### Setup development cluster using KIND (Kubernetes in docker)
@@ -118,5 +142,21 @@
      ![](.README/6ab875c3.png)
 
 ## Benefits of using Flux
-## Who else is using Flux in production ?
+   - Off-load the hassle of securely managing "kubeconfigs" in CI tools/Vault/buckets etc.
+   - The deployment and release process is completely version controlled.
+   - Implicit audit provided by Git.
+   - Roll-out production release on PR approval.
+   - No need to open firewall between CI tool and Kubernetes cluster. Promotes secure CI/CD.
+     - Increase confidence in Zero-Trust network implementation.
+     - Zero pipeline failures due to network disruption or node failures.
+   - Environments achieve its absolute state, as soon Kubernetes cluster recovers from any disaster.
+   - Can be combined with Flagger for the automation of promoting canary deployments using Service Mesh like Istio.
+   - Extends support with GitHub, GitLab, Harbor etc. with in-built webhooks.
+   - Can publish post-release alerts on Slack, MS Teams or SMTP.    
+
+
 ## References
+- GitOps and Kubernetes - Continuous Deployment with Argo CD, Jenkins X, and Flux [https://www.manning.com/books/gitops-and-kubernetes]
+- KIND [https://kind.sigs.k8s.io/]
+- Flux [https://fluxcd.io/]
+- Source Code [https://github.com/rajat965ng/app-flux-infra]
