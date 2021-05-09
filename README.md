@@ -110,7 +110,13 @@
      ![](.README/94b5c991.png)
      
 #### Observe the helm rolling
-    
+
+   - ![](.README/b827dca2.png) 
+   
+   - Release "0.1.1" is successfully rolled out with updated image tag "v1.20.0"
+   
+     ![](.README/6ab875c3.png)
+
 ## Benefits of using Flux
 ## Who else is using Flux in production ?
 ## References
