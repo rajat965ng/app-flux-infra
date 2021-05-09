@@ -101,11 +101,14 @@
      ![](.README/9b7fc888.png)
           
 #### Update the Helm Chart
-   - Update image tag from "1.16.0" --to--> "1.20.0" in values.yaml
+   - Update image tag from "1.16.0" --to--> "1.20.0" in values.yaml and version "0.1.0" --to--> "0.1.1" in Chart.yaml
    - ```
      helm package ms-template/
      helm repo index --url=https://rajat965ng.github.io/app-flux-infra/helm-chart/ .
      ```  
+     
+     ![](.README/94b5c991.png)
+     
 #### Observe the helm rolling
     
 ## Benefits of using Flux
