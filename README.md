@@ -6,7 +6,7 @@
 
 ## System Requirements
 ### Setup development cluster using KIND (Kubernetes in docker)
-    - ```
+   - ```
         wget https://github.com/kubernetes-sigs/kind/releases/download/v0.10.0/kind-darwin-amd64
         mv kind-darwin-amd64 kind
         chmod +x kind
@@ -14,18 +14,18 @@
         kind version
         kind create cluster
         kubectl get ns
-      ```
+     ```
       ![](.README/224c32de.png)
 
 ### Install & Configure Flux in Kubernetes Cluster  
-    - ```
+   - ```
         wget https://github.com/fluxcd/flux2/releases/download/v0.13.3/flux_0.13.3_darwin_amd64.tar.gz
         tar -xvf flux_0.13.3_darwin_amd64.tar.gz
         mv flux /usr/local/bin/
         flux --version
         flux check --pre
         flux install
-      ```
+     ```
       ![](.README/94dd5562.png)
 
 ## GitOps In Action
