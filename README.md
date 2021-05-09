@@ -15,7 +15,6 @@
         kind create cluster
         kubectl get ns
       ```
-      
       ![](.README/224c32de.png)
 
 ### Install & Configure Flux in Kubernetes Cluster  
@@ -31,35 +30,38 @@
 
 ## GitOps In Action
 ### Setup Git repository "app-flux-infra"
-    - ![](.README/d95b4d71.png)
-    - ![](.README/a8a9d248.png)
-    - ![](.README/6265978c.png)
+   - ![](.README/d95b4d71.png)
+   - ![](.README/a8a9d248.png)
+   - ![](.README/6265978c.png)
 ### Apply kubernetes deployments
 #### Bootstrap Git repository in flux
-    ``` flux bootstrap git app-flux-infra --url=https://github.com/rajat965ng/app-flux-infra.git -u <GIT_USERNAME> -p <GIT_PAT> --token-auth=true --path=./cluster/dev/```
+   - ```flux bootstrap git app-flux-infra --url=https://github.com/rajat965ng/app-flux-infra.git -u <GIT_USERNAME> -p <GIT_PAT> --token-auth=true --path=./cluster/dev/```
    
-      ![](.README/7ac12368.png)
+     ![](.README/7ac12368.png)
       
 #### Take a git pull and view the cluster hierarchy 
-      ![](.README/a54e6b15.png)  
+   - ![](.README/a54e6b15.png)  
 #### Create a Nginx deployment under cluster/dev
-      ![](.README/46957eb1.png)
+   - ![](.README/46957eb1.png)
 #### Push Nginx deployment in Git repo
-      ![](.README/68378e6f.png)
+   - ![](.README/68378e6f.png)
 #### Observe the deployments rolling
-      ![](.README/1dae1f2a.png)
+   - ![](.README/1dae1f2a.png)
 #### Query Flux to view the current deployed revision
-     ```flux get all```
+   - ```flux get all```
        
-      ![](.README/68838edb.png)
+     ![](.README/68838edb.png)
+     
 #### Trace applied revision to match with Git SHA
-      ![](.README/d0b65799.png)    
-  - Apply Helm Chart
-    - Create Helm Chart
-    - How to convert Github in Helm repository ?
-    - Configure Helm Repository in Flux
-    - Update the Helm Chart
-    - Observe the helm rolling
-- Benefits of using Flux
-- Who else is using Flux in production ?
-- References
+   - ![](.README/d0b65799.png)    
+
+### Apply Helm Chart
+#### Create Helm Chart
+#### How to convert Github in Helm repository ?
+#### Configure Helm Repository in Flux
+#### Update the Helm Chart
+#### Observe the helm rolling
+
+## Benefits of using Flux
+## Who else is using Flux in production ?
+## References
