@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  ms-template:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-05-09T14:00:48.288978+05:30"
+    description: A Helm chart for Kubernetes
+    digest: c801f6f35662591cc5385dad83567db25e1c9e6c2a208db7585e83c7c27a792d
+    name: ms-template
+    type: application
+    urls:
+    - https://rajat965ng.github.io/app-flux-infra/helm-chart/ms-template-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-05-09T14:00:48.283175+05:30"

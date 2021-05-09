@@ -58,7 +58,32 @@
 ### Apply Helm Chart
 #### Create a Helm Chart "ms-template"
    - ![](.README/537bb8a6.png)
+#### Package Helm Chart
+   - To avoid bot crawling on my repository, add the following robots.txt file:
+     ```
+     echo -e “User-Agent: *\nDisallow: /” > robots.txt
+     ```
+   - Lint the helm chart
+     ```
+     helm lint helm-chart/*
+     ``` 
+   - Package helm chart
+     ```
+     cd helm-chart/ && helm package ms-template/
+     ```   
+   - Create index.yaml for ms-template
+     ```
+     helm repo index --url=https://rajat965ng.github.io/app-flux-infra/helm-chart/ .
+     ```  
+#### Push Helm Chart in Git
+   - ![](.README/624aaaa5.png) 
 #### How to convert Github in Helm repository ?
+   - Click on Git repository "Settings"
+   - Scroll down options to choose "Pages"
+   - Select "Branch" -> "main" from dropDown and click "save"
+   
+     ![](.README/34097a07.png)
+     
 #### Configure Helm Repository in Flux
 #### Update the Helm Chart
 #### Observe the helm rolling
