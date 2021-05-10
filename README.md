@@ -1,3 +1,30 @@
+## Table Of Contents
+- Introduction
+  - What is GitOps?
+  - What is Flux?
+  - Components Of Flux
+- System Requirements
+  - Setup development cluster using KIND (Kubernetes in docker)
+  - Install & Configure Flux in Kubernetes Cluster
+- GitOps In Action
+  - Setup Git repository "app-flux-infra"
+  - Apply Kubernetes manifests (YAMLs)
+    - Bootstrap Git repository in flux
+    - Create an Nginx deployment under cluster/dev
+    - Observe the deployments rolling on git push and Query Flux to view the currently deployed revision
+    - Trace applied revision to match with Git SHA
+  - Apply Helm Chart
+    - Create a Helm Chart "ms-template"
+    - Package Helm Chart
+    - How to convert Github repo into Helm repository?
+    - Configure Helm Repository in Flux
+    - Create Helm Release in Flux
+    - Update the Helm Chart
+    - Observe the helm update rolling
+- Benefits of using Flux
+- References 
+
+
 # Learn To Implement GitOps On Kubernetes Using Flux In Just 15 Minutes
 ## Introduction
 ### What is GitOps ?
